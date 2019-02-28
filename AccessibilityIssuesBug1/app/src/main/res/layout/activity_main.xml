@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/content"
+        android:visibility="visible">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/main.appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentScrim="@color/background"
+                app:expandedTitleMarginBottom="?attr/actionBarSize"
+                app:expandedTitleMarginStart="10dp"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:scrimVisibleHeightTrigger="0dp"
+                app:statusBarScrim="@color/black">
+
+                <LinearLayout
+                    android:id="@+id/heroHeaderView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="312dp"
+                    android:id="@+id/last_item"
+                    android:text="Hero Header View Should Go Here"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                </LinearLayout>
+
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <TextView
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="13dp"
+                android:text="Tab"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+</LinearLayout>
